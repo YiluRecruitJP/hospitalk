@@ -1,0 +1,59 @@
+  <div class="contents row">
+    <h2>Sign up</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :nickname %> <em>(8 characters maximum)</em><br />
+        <%= f.text_field :nickname, autofocus: true, maxlength: "8" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :Nationality %><br />
+        <%= f.text_field :Nationality%>
+      </div>
+<!--       <div class="field">
+        <%= f.label :RemarkCount %><br />
+        <%= f.text_field :RemarkCount%>
+      </div> -->
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email %>
+      </div>
+
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @validatable %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+      <div class="field">
+        <%= f.label :Gender %><br />
+        <div class="clearfix">
+          <div class="radio-float">
+           男性:
+          </div>
+          <div class="radio-float">
+            <%= f.radio_button :Gender, "0"  %>
+          </div>
+          <div class="radio-float">
+            女性:
+          </div>
+          <div class="radio-float">
+           <%= f.radio_button :Gender, "1" %>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
+  </div>
