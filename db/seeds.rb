@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require "csv"
+hospis_csv=CSV.readlines("db/hospis.csv")
+hospis_csv.shift
+hospis_csv.each do |row|
+  Hospis.create(remarkuser: row[1], remarkhospital: row[2],point: row[3], contents: row[4], address: row[5])
+end
