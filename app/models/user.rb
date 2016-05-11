@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
     if user.blank?
       user = User.new
     end
-  user.uid   = auth.uid
+  user.id   = auth.uid
   user.name  = auth.info.name
   user.email = auth.info.email
   user.icon  = auth.info.image
