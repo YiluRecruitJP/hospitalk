@@ -48,5 +48,22 @@ end
 gem 'pry-rails'
 gem 'compass-rails','~> 2.0'
 gem 'sprockets', '2.11.0'
-gem 'kaminari'
 gem 'devise'
+gem 'kaminari'
+
+platforms :ruby_18 do
+  gem 'hashie', '~> 2.0.5'
+end
+
+platforms :rbx do
+  gem 'rubysl', '~> 2.0'
+end
+gem 'omniauth-facebook'
+group :production, :staging do
+  gem 'rails_12factor'
+end
+
+
+
+
+

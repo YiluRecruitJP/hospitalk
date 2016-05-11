@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hospital</title>
+    <title>Hospitalk</title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -22,22 +22,64 @@
   </head>
 
   <body>
-    <header class="header">
+<!--     <header class="header">
       <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">Hospitalk</a></h1>
+       <h1 class="grid-6"><a href="/">Hospitalk</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
-            <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-            <a class="post" href="/hospitalk/new">Write Remark</a>
+           <span><%= current_user.nickname %>
+            <ul class="user__info">
+             <li>
+              <a href="/users/<%= current_user.id %>">My Page</a>
+              <a href="/hospitalk/new">Write Remark</a>
+
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+             </li>
+            </ul>
+           </span>
           </div>
         <% else %>
           <div class="grid-6">
-            <%= link_to "Log On", new_user_session_path, class: 'post' %>
-            <%= link_to "Sign Up", new_user_registration_path, class: 'post' %>
+            <%= link_to "Log On", new_user_session_path, class: 'buttons' %>
+            <%= link_to "Sign Up", new_user_registration_path, class: 'buttons' %>
           </div>
-        <% end %>
+    <% end %>
       </div>
+    </header> -->
+    <header class="header">
+          <!-- <h1 class="Title_Frontpage"><a href="/">Hospitalk</a></h1> -->
+          <!-- <span id="menu">&#9776;</span> -->
+          <div class="heading">
+            <h1 class="heading_title">Hospitalk</h1>
+            <div class="heading_sentence">We share review of hospitals for foreigner in Japan!</div>
+          </div>
+          <div class="Navbar_Frontpage">
+           <ul class="Navi_List">
+              
+              
+              <% if user_signed_in? %>
+               <!-- <div class="user_nav grid-6"> -->
+               <!-- <span>Hello!<%= current_user.nickname %> -->
+                <!-- <ul class="user__info"> -->
+                 <li class="greeting">Welcome!  <%= current_user.nickname %> </li>
+                 <li ><a href="/" class="button white">Home Page</a></li>
+                 <li ><a href="/users/<%= current_user.id %>" class="button white">My Page</a></li>
+                 <li ><a href="/hospitalk/new" class="button white">New Review</a></li>
+                 <li class="button white"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+                 
+                <!-- </ul> -->
+               <!-- </span> -->
+             <!-- </div> -->
+              <% else %>
+                <li ><a href="/" class="button white">Home Page</a></li>
+                <li ><a href="/users/sign_in" class="button white">New Review</a></li>
+                <li ><a href="/users/sign_in" class="button white">Sign In</a></li>
+                <li ><a href="/users/sign_up" class="button white">Sign Up</a></li>
+              <% end %>
+           </ul>
+         </div>
     </header>
+ 
     <div class="wrapper">
       <%= yield %>
     </div>

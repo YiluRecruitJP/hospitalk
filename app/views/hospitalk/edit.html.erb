@@ -1,0 +1,12 @@
+  <div class="contents row">
+    <%= form_tag("/hospitalk/#{@hospi.id}", method: :patch ) do %>
+      <h3>
+        Edit review
+      </h3>
+      <input placeholder="Hospital Name" type="text" name="remarkhospital" value="<%= @hospi.remarkhospital%>" autofocus="true">
+      <input placeholder="Hospital Address" type="text" name="address" value="<%= @hospi.address%>" autofocus="true">
+      <input placeholder="Remark" type="text" name="contents" value="<%= @hospi.contents%>" autofocus="true">
+      <input placeholder="Ranking(1~10)" type="text" name="point" value="<%= @hospi.point%>" autofocus="true">
+      <input type="submit" value="SENT">
+    <% end %>
+  </div>
