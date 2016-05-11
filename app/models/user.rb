@@ -10,11 +10,11 @@ class User < ActiveRecord::Base
       user = User.new
     end
   user.id   = auth.uid
-  user.name  = auth.info.name
+  user.nickname  = auth.info.name
   user.email = auth.info.email
-  user.icon  = auth.info.image
+  # user.icon  = auth.info.image
   user.oauth_token      = auth.credentials.token
-  user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+  # user.oauth_expires_at = Time.at(auth.credentials.expires_at)
   user
   end
   devise :database_authenticatable, :registerable,
