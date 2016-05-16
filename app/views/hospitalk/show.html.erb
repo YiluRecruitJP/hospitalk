@@ -1,0 +1,56 @@
+  <div class="contents clearfix">
+    <div class="left-content">
+        <p class="stylist-name">Hospital:<%= @hospi.remarkhospital %> </p>
+        <p class="stylist-text">Address:<%= @hospi.address %> </p>
+        <p class="stylist-text">Remark:<%= @hospi.contents %> </p>
+        <p class="stylist-text">Remark User:<%= @hospi.user.nickname %> (<%= @hospi.user.Nationality %>)</p>
+        <p class="stylist-text">Ranking:<%= @hospi.point %> </p>
+    </div>
+
+    <div class="right-content">
+        <div class="contents row">
+          <div id="map" style="width: 600px; height: 450px;"></div> 
+
+           <script type="text/javascript">
+
+           // var address = #{hospi.address};
+           // console.log(address)
+           var address ='<%= @hospi.address %>';
+
+           var map = new google.maps.Map(document.getElementById('map'), {
+               mapTypeId: google.maps.MapTypeId.TERRAIN,
+               zoom: 6
+           });
+
+           var geocoder = new google.maps.Geocoder();
+
+           geocoder.geocode({
+              'address': address
+           }, 
+           function(results, status) {
+              if(status == google.maps.GeocoderStatus.OK) {
+                 new google.maps.Marker({
+                    position: results[0].geometry.location,
+                    map: map
+                 });
+                 map.setCenter(results[0].geometry.location);
+              }
+           });
+
+           </script> 
+        </div>
+
+    </div>
+  </div>  
+
+
+ <!--  <script>
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  </script> -->
+
+
+
+<!--   <div>
+  <p>the latitude is <%= @hash[0][:lat] %></p>
+<p>the latitude is <%= @hospi.address %></p>
+  </div> -->

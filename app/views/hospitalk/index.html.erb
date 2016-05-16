@@ -7,10 +7,10 @@
         <span><%= image_tag 'arrow_top.png' %></span>
         <ul class="more_list">
           <li>
-            <%= link_to '編集', "/hospitalk/#{hospi.id}/edit", method: :get %>
+            <%= link_to 'Edit', "/hospitalk/#{hospi.id}/edit", method: :get %>
           </li>
           <li>
-            <%= link_to '削除', "/hospitalk/#{hospi.id}", method: :delete %>
+            <%= link_to 'Delete', "/hospitalk/#{hospi.id}", method: :delete %>
           </li>
         </ul>
       </div>
@@ -22,6 +22,8 @@
         <p class="stylist-name">Hospital:<%=hospi.remarkhospital%> </p>
         <p class="stylist-text">Remark:<%=hospi.contents%> </p>
         <p class="stylist-text">Ranking:<%=hospi.point%> </p>
+        <p class="stylist-text">Ranking:<%=hospi.address%></p>
+        <%= link_to 'Details', "hospitalk/show/#{hospi.id}", method: :get %>
       </div>
     </div>
    <% end %>

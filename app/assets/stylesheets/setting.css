@@ -849,5 +849,25 @@ footer p {
     position: relative;
     top: 1px;
 }
+.contents {
+  width: 960px;
+  margin: 10px auto;
+  margin: 10px auto;
+}
 
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.left-content {
+ 
+  width: 30%;
+  float: left;
+}
 
+.right-content {
+ 
+  width: 70%;
+  float: left;
+}
