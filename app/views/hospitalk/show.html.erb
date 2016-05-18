@@ -1,4 +1,4 @@
-  <div id="ItemDetail" class="contents clearfix">
+  <div id="ItemDetail" class="wrapper clearfix">
     <div class="left-content">
         <p class="stylist-name">Hospital:<%= @hospi.remarkhospital %> </p>
         <p class="stylist-text">Address:<%= @hospi.address %> </p>
@@ -7,8 +7,8 @@
         <p class="stylist-text">Ranking:<%= @hospi.point %> </p>
     </div>
 
-    <div class="right-content">
-        <div class="contents row">
+    <div class="wrapper">
+        <div>
           <div id="map" style="width: 600px; height: 450px;"></div>
 
            <script type="text/javascript">

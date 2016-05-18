@@ -1,12 +1,62 @@
-  <div id="MyPage" class="contents row" >
-   <p class="mypage_title"><%= @nickname %> has the following remarks:</p>
+  <div id="ReviewList" class="listings">
+  <div id="MyPage" class="wrapper" >
+  <h1 class="mypage_title"><%= @nickname %> has the following remarks:</h1>
+
+
+    <div id="ReviewList" class="listings">
+      <% @hospis.each do |hospi| %>
+       <div class="wrapper">
+      <ul class="properties_list">
+            <li>
+              <div class="property_details">
+              <%= image_tag "hos1.png" %>
+              <h2>Hospital:<%=hospi.remarkhospital%><span class="property_size"></span></h2>
+                <h2>Remark:<%=hospi.contents%><span class="property_size"></span></h2>
+                <h2>Ranking:<%=hospi.point%></h2>
+                <h2><%= link_to '*Edit', "/hospitalk/#{hospi.id}/edit", method: :get %></h2>
+                <h2><%= link_to '*Delete', "/hospitalk/#{hospi.id}", method: :delete %></h2>
+              </div>
+            </li>
+          </ul>
+        </div>
+       <% end %>
+       <!-- <h2><%= paginate(@hospis) %></h2> -->
+      </div>
+    </div>
+  </div>
+
+
+<!--
+ <div id="ReviewList" class="listings">
    <% @hospis.each do |hospi| %>
-    <div class="Contents_all clearfix">
-        <p class="stylist-name">Hospital:<%=hospi.remarkhospital%> </p>
-        <p class="stylist-text">Remark:<%=hospi.contents%> </p>
-        <p class="stylist-text">Ranking:<%=hospi.point%> </p>
-        <%= link_to 'Details', "/hospitalk/show/#{hospi.id}/#ItemDetail", method: :get %>
-        <% if user_signed_in? && current_user.id == hospi.user_id %>
+    <div class="wrapper">
+      <ul class="properties_list">
+            <li>
+              <div class="property_details">
+              <h2>Hospital:<%=hospi.remarkhospital%><span class="property_size"></span></h2>
+                <h2>Remark:<%=hospi.contents%><span class="property_size"></span></h2>
+                <h2>Ranking:<%=hospi.point%></h2>
+                  <ul>
+                    <li>
+                      <%= link_to 'Edit', "/hospitalk/#{hospi.id}/edit", method: :get %>
+                    </li>
+                    <li>
+                      <%= link_to 'Delete', "/hospitalk/#{hospi.id}", method: :delete %>
+                    </li>
+                  </ul>
+              </div>
+            </li>
+          </ul>
+        </div> -->
+
+
+
+
+
+
+
+
+<!--         <% if user_signed_in? && current_user.id == hospi.user_id %>
         <div class="more">
         <ul class="more_list">
           <li>
@@ -22,3 +72,4 @@
    <% end %>
    <%= paginate(@hospis) %>
   </div>
+  </div> -->

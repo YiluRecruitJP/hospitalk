@@ -1,13 +1,17 @@
-<div id="ReviewList" >
-  <h1 class="List_Title">Newest Remarks</h1>
-   <% @hospis.each do |hospi| %>
-      <div class="properties_list">
-        <h2>Hospital:<%=hospi.remarkhospital%> </h2>
-        <h3>Remark:<%=hospi.contents%> </h3>
-        <h3>Ranking:<%=hospi.point%> </h3>
-        <h3><%= link_to 'Details', "hospitalk/show/#{hospi.id}/#ItemDetail", method: :get %></h3>
-      </div>
-   <% end %>
-   <h2><%= paginate(@hospis) %></h2>
+<div id="ReviewList" class="listings">
+      <% @hospis.each do |hospi| %>
+       <div class="wrapper">
+           <ul class="properties_list">
+            <li>
+              <div class="property_details">
+              <%= image_tag "hos1.png" %>
+              <h2>Hospital:<%=hospi.remarkhospital%><span class="property_size"></span></h2>
+                <h2>Remark:<%=hospi.contents%><span class="property_size"></span></h2>
+                  <%= link_to 'Details about this review', "hospitalk/show/#{hospi.id}/#ItemDetail", method: :get %>
+              </div>
+            </li>
+          </ul>
+        </div>
+       <% end %>
+       <h2><%= paginate(@hospis) %></h2>
 </div>
-

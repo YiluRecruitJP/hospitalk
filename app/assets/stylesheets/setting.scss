@@ -35,12 +35,14 @@
 /*  General CSS  */
 body{
     background: #fff;
+    min-width: 1100px;
 }
 
 .wrapper{
-    width: 1100px;
+    min-width: 1100px;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
 }
 
 h1, h2, h3, h4, h5 ,h6{
@@ -93,24 +95,24 @@ header .logo{
     float: left;
 }
 
-header a.hamburger{
-    text-decoration: none;
-    display: none;
-    float: right;
-    margin-top: 41px;
-    width: 24px;
-    height: 19px;
-    background-image: image-url("hamburger_icon.png");
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat-x: no-repeat;
-    background-repeat-y: no-repeat;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
-}
+// header a.hamburger{
+//     text-decoration: none;
+//     display: none;
+//     float: right;
+//     margin-top: 41px;
+//     width: 24px;
+//     height: 19px;
+//     background-image: image-url("hamburger_icon.png");
+//     background-position-x: initial;
+//     background-position-y: initial;
+//     background-size: initial;
+//     background-repeat-x: no-repeat;
+//     background-repeat-y: no-repeat;
+//     background-attachment: initial;
+//     background-origin: initial;
+//     background-clip: initial;
+//     background-color: initial;
+// }
 
 header nav{
     float: right;
@@ -160,7 +162,6 @@ header nav .login_btn:hover{
     height: 800px;
     position: relative;
     background-image: image-url("MapHospital.png");
-
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -194,6 +195,202 @@ header nav .login_btn:hover{
     background-color: #0000CD;
 
 }
+
+/*  Search Section  */
+
+.search{
+    width: 100%;
+    height: 100px;
+    background: #bfd9f2;
+    position: relative;
+}
+.search #search{
+    display: block;
+    width: 1000px;
+    height: 100px;
+    float: left;
+    border: 0;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    background: #bfd9f2;
+    color: #ffffff;
+    font-family: "lato-regular", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 22px;
+}
+
+.search #search::-webkit-input-placeholder{
+   color: #95badf;
+}
+
+.search #search:-moz-placeholder{
+   color: #95badf;
+}
+
+.search #search::-moz-placeholder{
+   color: #95badf;
+}
+
+.search #search:-ms-input-placeholder{
+   color: #95badf;
+}
+
+.search #submit_search{
+    display: none;
+}
+
+.search .advanced_search_icon{
+    display: block;
+    width: 26px;
+    height: 26px;
+    float: right;
+    background: url('../img/advanced_search_inactive.png') no-repeat;
+    margin-top: 37px;
+
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+}
+
+.search .advanced_search_icon:hover{
+    background: url('../img/advanced_search_hover.png') no-repeat;
+}
+
+.search .advanced_search_icon.active{
+    background: url('../img/advanced_search_active.png') no-repeat;
+}
+
+
+
+
+
+.search .advanced_search{
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background: #cbe0f4;
+    border-top: 1px solid #aac8e4;
+    border-bottom: 1px solid #aac8e4;
+    z-index: 9999;
+    display: none;
+}
+
+.search .advanced_search .arrow{
+    display: block;
+    width: 14px;
+    height: 9px;
+    background: url('../img/search_arrow.png') no-repeat;
+    position: absolute;
+    top: -8px;
+    right: 6px;
+}
+
+.search .advanced_search #check_in_date,
+.search .advanced_search #check_out_date,
+.search .advanced_search #min_price,
+.search .advanced_search #max_price{
+    display: block;
+    width: 509px;
+    height: 100px;
+    border: 0;
+    margin: 0;
+    padding: 0 20px;
+    outline: none;
+    background: #cbe0f4;
+}
+
+.search .advanced_search #check_in_date,
+.search .advanced_search #check_out_date{
+    width: 429px;
+    background: url('../img/calendar_icon.png') no-repeat;
+    background-position: 484px 50%;
+    padding: 0 100px 0 20px;
+}
+
+.search .advanced_search .float{
+    float: left;
+}
+
+.search .advanced_search .search_fields{
+    overflow: hidden;
+    border-bottom: 1px solid #aac8e4;
+}
+
+.search .advanced_search .field_sep{
+    display: inline-block;
+    width: 1px;
+    height: 60px;
+    border: 0;
+    background: #aac8e4;
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+
+.search .advanced_search #keywords{
+    display: block;
+    width: 1060px;
+    height: 100px;
+    border: 0;
+    margin: 0;
+    padding: 0 20px;
+    outline: none;
+    background: #cbe0f4;
+}
+
+.search .advanced_search #check_in_date,
+.search .advanced_search #check_out_date,
+.search .advanced_search #min_price,
+.search .advanced_search #max_price,
+.search .advanced_search #keywords{
+    color: #ffffff;
+    font-family: "lato-regular", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 22px;
+}
+
+
+.search .advanced_search #check_in_date::-webkit-input-placeholder,
+.search .advanced_search #check_out_date::-webkit-input-placeholder,
+.search .advanced_search #min_price::-webkit-input-placeholder,
+.search .advanced_search #max_price::-webkit-input-placeholder,
+.search .advanced_search #keywords::-webkit-input-placeholder{
+   color: #95badf;
+}
+
+.search .advanced_search #check_in_date:-moz-placeholder,
+.search .advanced_search #check_out_date:-moz-placeholder,
+.search .advanced_search #min_price:-moz-placeholder,
+.search .advanced_search #max_price:-moz-placeholder,
+.search .advanced_search #keywords:-moz-placeholder{
+   color: #95badf;
+}
+
+.search .advanced_search #check_in_date::-moz-placeholder,
+.search .advanced_search #check_out_date::-moz-placeholder,
+.search .advanced_search #min_price::-moz-placeholder,
+.search .advanced_search #max_price::-moz-placeholder,
+.search .advanced_search #keywords::-moz-placeholder{
+   color: #95badf;
+}
+
+.search .advanced_search #check_in_date:-ms-input-placeholder,
+.search .advanced_search #check_out_date:-ms-input-placeholder,
+.search .advanced_search #min_price:-ms-input-placeholder,
+.search .advanced_search #max_price:-ms-input-placeholder,
+.search .advanced_search #keywords:-ms-input-placeholder{
+   color: #95badf;
+}
+
+
+
+
 .listings{
     padding: 100px 0;
 }
@@ -207,7 +404,7 @@ header nav .login_btn:hover{
 
 .listings ul.properties_list li{
     display: block;
-    width: 340px;
+    width: 100%;
     height: auto;
     position: relative;
     float: left;
@@ -245,7 +442,7 @@ header nav .login_btn:hover{
 }
 
 .listings ul li .property_details{
-    width: 298px;
+    width: 90%;
     padding: 10px 20px 14px 20px;
     border-bottom: 1px solid #f2f1f1;
     border-left: 1px solid #f2f1f1;
@@ -320,10 +517,9 @@ header nav .login_btn:hover{
     color: #a0c3e5;
     border: 2px solid #a0c3e5;
 }
-footer{
-    /*padding-top: 100px;*/
-    background: #95badf;
-}
+// footer{
+//     background: #95badf;
+// }
 footer .copyrights{
     display: block;
     text-align: center;
