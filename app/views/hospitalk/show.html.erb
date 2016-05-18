@@ -1,4 +1,4 @@
-  <div class="contents clearfix">
+  <div id="ItemDetail" class="contents clearfix">
     <div class="left-content">
         <p class="stylist-name">Hospital:<%= @hospi.remarkhospital %> </p>
         <p class="stylist-text">Address:<%= @hospi.address %> </p>
@@ -9,7 +9,7 @@
 
     <div class="right-content">
         <div class="contents row">
-          <div id="map" style="width: 600px; height: 450px;"></div> 
+          <div id="map" style="width: 600px; height: 450px;"></div>
 
            <script type="text/javascript">
 
@@ -26,7 +26,7 @@
 
            geocoder.geocode({
               'address': address
-           }, 
+           },
            function(results, status) {
               if(status == google.maps.GeocoderStatus.OK) {
                  new google.maps.Marker({
@@ -37,11 +37,11 @@
               }
            });
 
-           </script> 
+           </script>
         </div>
 
     </div>
-  </div>  
+  </div>
 
 
  <!--  <script>

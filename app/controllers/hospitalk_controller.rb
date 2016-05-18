@@ -13,6 +13,9 @@ class HospitalkController < ApplicationController
   def new
   end
 
+  def picture_params
+      params.require(:hospi).permit(:avatar)
+  end
 
 
   def show

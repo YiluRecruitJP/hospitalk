@@ -1,31 +1,13 @@
-<div class="contents_list">
-  <h1 class="leading_head">Newest Remarks</h1>
+<div id="ReviewList" >
+  <h1 class="List_Title">Newest Remarks</h1>
    <% @hospis.each do |hospi| %>
-    <div class="Contents_all clearfix">
-     <% if user_signed_in? && current_user.id == hospi.user_id %>
-        <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
-          <li>
-            <%= link_to 'Edit', "/hospitalk/#{hospi.id}/edit", method: :get %>
-          </li>
-          <li>
-            <%= link_to 'Delete', "/hospitalk/#{hospi.id}", method: :delete %>
-          </li>
-        </ul>
+      <div class="properties_list">
+        <h2>Hospital:<%=hospi.remarkhospital%> </h2>
+        <h3>Remark:<%=hospi.contents%> </h3>
+        <h3>Ranking:<%=hospi.point%> </h3>
+        <h3><%= link_to 'Details', "hospitalk/show/#{hospi.id}/#ItemDetail", method: :get %></h3>
       </div>
-     <% end %>
-      <div class="left_box">
-        <%= image_tag "hos1.png",:width => '90%' %>
-      </div>
-      <div class="right_box">
-        <p class="stylist-name">Hospital:<%=hospi.remarkhospital%> </p>
-        <p class="stylist-text">Remark:<%=hospi.contents%> </p>
-        <p class="stylist-text">Ranking:<%=hospi.point%> </p>
-        <p class="stylist-text">Ranking:<%=hospi.address%></p>
-        <%= link_to 'Details', "hospitalk/show/#{hospi.id}", method: :get %>
-      </div>
-    </div>
    <% end %>
-      <%= paginate(@hospis) %>
+   <h2><%= paginate(@hospis) %></h2>
 </div>
+

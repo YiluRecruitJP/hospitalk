@@ -1,10 +1,13 @@
-  <div class="contents row" >
+  <div id="MyPage" class="contents row" >
    <p class="mypage_title"><%= @nickname %> has the following remarks:</p>
    <% @hospis.each do |hospi| %>
     <div class="Contents_all clearfix">
-      <% if user_signed_in? && current_user.id == hospi.user_id %>
+        <p class="stylist-name">Hospital:<%=hospi.remarkhospital%> </p>
+        <p class="stylist-text">Remark:<%=hospi.contents%> </p>
+        <p class="stylist-text">Ranking:<%=hospi.point%> </p>
+        <%= link_to 'Details', "/hospitalk/show/#{hospi.id}/#ItemDetail", method: :get %>
+        <% if user_signed_in? && current_user.id == hospi.user_id %>
         <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
         <ul class="more_list">
           <li>
             <%= link_to 'Edit', "/hospitalk/#{hospi.id}/edit", method: :get %>
@@ -15,15 +18,6 @@
         </ul>
       </div>
      <% end %>
-      <div class="left_box">
-        <%= image_tag "hos1.png",:width => '90%' %>
-      </div>
-      <div class="right_box">
-        <p class="stylist-name">Hospital:<%=hospi.remarkhospital%> </p>
-        <p class="stylist-text">Remark:<%=hospi.contents%> </p>
-        <p class="stylist-text">Ranking:<%=hospi.point%> </p>
-        <%= link_to 'Details', "hospitalk/show/#{hospi.id}", method: :get %>
-      </div>
     </div>
    <% end %>
    <%= paginate(@hospis) %>

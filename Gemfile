@@ -66,5 +66,5 @@ end
 gem "gmaps4rails"
 gem "geocoder"
 
-
+gem 'paperclip', '~> 4.1'
 

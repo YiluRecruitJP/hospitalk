@@ -3,11 +3,11 @@
     Template Author : pixelhint.com
     Author Email    : contact@pixelhint.com
     Template Name   : La Casa
-    
-    
+
+
     *****************************************
-    
-    
+
+
     - Fonts
     - General CSS
     - Header
@@ -16,7 +16,7 @@
     - Listings
     - Footer
     - Responsive CSS
-    
+
 
 */
 
@@ -95,17 +95,17 @@ h6              { font-size: .75em; margin: 1.67em 0 }
 h1, h2, h3, h4,
 h5, h6          { font-weight: bolder }
 
-.clearfix:before,  
-.clearfix:after {  
-    content: " ";  
-    display: table;  
-}  
-.clearfix:after {  
-    clear: both;  
-}  
- 
-.clearfix {  
-    *zoom: 1;  
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
 }
 
 
@@ -137,12 +137,30 @@ header a.hamburger{
     margin-top: 41px;
     width: 24px;
     height: 19px;
-    background: url('../img/hamburger_icon.png') no-repeat;
+    background-image: image-url("hamburger_icon.png");
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
 }
 
 header a.hamburger.opned{
     width: 19px;
-    background: url('../img/close_menu_icon.png') no-repeat;
+    background-image: image-url("close_menu_icon.png");
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
 }
 
 
@@ -280,17 +298,17 @@ header nav .login_btn:hover{
    color: #95badf;
 }
 
-.search #search:-moz-placeholder{ 
-   color: #95badf;  
+.search #search:-moz-placeholder{
+   color: #95badf;
 }
 
-.search #search::-moz-placeholder{ 
-   color: #95badf;  
+.search #search::-moz-placeholder{
+   color: #95badf;
 }
 
-.search #search:-ms-input-placeholder{  
-   color: #95badf;  
-} 
+.search #search:-ms-input-placeholder{
+   color: #95badf;
+}
 
 .search #submit_search{
     display: none;
@@ -402,14 +420,14 @@ header nav .login_btn:hover{
 .search .advanced_search #check_out_date,
 .search .advanced_search #min_price,
 .search .advanced_search #max_price,
-.search .advanced_search #keywords{    
+.search .advanced_search #keywords{
     color: #ffffff;
     font-family: "lato-regular", Helvetica, Arial, sans-serif;
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 22px;
-} 
+}
 
 
 .search .advanced_search #check_in_date::-webkit-input-placeholder,
@@ -420,29 +438,29 @@ header nav .login_btn:hover{
    color: #95badf;
 }
 
-.search .advanced_search #check_in_date:-moz-placeholder, 
-.search .advanced_search #check_out_date:-moz-placeholder, 
-.search .advanced_search #min_price:-moz-placeholder, 
-.search .advanced_search #max_price:-moz-placeholder, 
-.search .advanced_search #keywords:-moz-placeholder{ 
-   color: #95badf;  
+.search .advanced_search #check_in_date:-moz-placeholder,
+.search .advanced_search #check_out_date:-moz-placeholder,
+.search .advanced_search #min_price:-moz-placeholder,
+.search .advanced_search #max_price:-moz-placeholder,
+.search .advanced_search #keywords:-moz-placeholder{
+   color: #95badf;
 }
 
-.search .advanced_search #check_in_date::-moz-placeholder, 
-.search .advanced_search #check_out_date::-moz-placeholder, 
-.search .advanced_search #min_price::-moz-placeholder, 
-.search .advanced_search #max_price::-moz-placeholder, 
-.search .advanced_search #keywords::-moz-placeholder{ 
-   color: #95badf;  
+.search .advanced_search #check_in_date::-moz-placeholder,
+.search .advanced_search #check_out_date::-moz-placeholder,
+.search .advanced_search #min_price::-moz-placeholder,
+.search .advanced_search #max_price::-moz-placeholder,
+.search .advanced_search #keywords::-moz-placeholder{
+   color: #95badf;
 }
 
-.search .advanced_search #check_in_date:-ms-input-placeholder,  
-.search .advanced_search #check_out_date:-ms-input-placeholder,  
-.search .advanced_search #min_price:-ms-input-placeholder,  
-.search .advanced_search #max_price:-ms-input-placeholder,  
-.search .advanced_search #keywords:-ms-input-placeholder{  
-   color: #95badf;  
-} 
+.search .advanced_search #check_in_date:-ms-input-placeholder,
+.search .advanced_search #check_out_date:-ms-input-placeholder,
+.search .advanced_search #min_price:-ms-input-placeholder,
+.search .advanced_search #max_price:-ms-input-placeholder,
+.search .advanced_search #keywords:-ms-input-placeholder{
+   color: #95badf;
+}
 
 
 
@@ -578,7 +596,7 @@ header nav .login_btn:hover{
 
 .listings .more_listing_btn:hover{
     color: #a0c3e5;
-    border: 2px solid #a0c3e5;    
+    border: 2px solid #a0c3e5;
 }
 
 
@@ -775,7 +793,7 @@ footer .copyrights a.ph_link{
 
     .hero .caption{
         width: 92.72727272727273%;
-        padding: 0 3.636363636363636%; 
+        padding: 0 3.636363636363636%;
     }
 
     .hero .caption h3{
@@ -957,7 +975,7 @@ footer .copyrights a.ph_link{
 
     .listings .more_listing_btn{
         display: block;
-        width: 100%; 
+        width: 100%;
         padding-left: 0!important;
         padding-right: 0!important;
     }
@@ -978,4 +996,30 @@ footer .copyrights a.ph_link{
     footer .footer > ul > li.links{
         border-bottom: 1px solid #82abd4;
     }
+    .navbar, .navbar-inverse {
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+    min-height: 80px;
+}
+
+.nav li {
+    display: inline;
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+    font-family: Lato;
+    font-size: 1.7em;
+    font-weight: 300;
+    padding: 30px 25px 33px 25px;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+    background-color: #444444;
+    transition: 0.7s all linear;
+    height: 100%;
+}
+
 }

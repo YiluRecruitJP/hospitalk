@@ -11,16 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512050033) do
+ActiveRecord::Schema.define(version: 20160516223235) do
 
   create_table "hospis", force: :cascade do |t|
-    t.string   "remarkhospital", limit: 255
-    t.string   "point",          limit: 255
-    t.text     "contents",       limit: 65535
-    t.string   "address",        limit: 255
+    t.string   "remarkhospital",      limit: 255
+    t.string   "point",               limit: 255
+    t.text     "contents",            limit: 65535
+    t.string   "address",             limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",        limit: 4
+    t.integer  "user_id",             limit: 4
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
+    t.integer  "avatar_file_size",    limit: 4
+    t.datetime "avatar_updated_at"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title",              limit: 255
+    t.string   "body",               limit: 255
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "usermaps", force: :cascade do |t|
